@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MobileAnswer</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div class=&quot;content&quot;&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://mobile.answers.com/%@</string>
+	</dict>
+	<key>NateEnglishKorean</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&apos;container&apos;&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://alldic.nate.com/search/alldic.html?thr=vndi&amp;cm=c&amp;q=%@</string>
+	</dict>
+	<key>ThesaurusOnline</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;!-- google_ad_section_start(name=def) --&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;!-- google_ad_section_end(name=def) --&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://thesaurus.com/browse/%@</string>
+	</dict>
+	<key>YahooEnglishKorea</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;font class=&apos;StyleDic_0&apos;&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;</string>
+		<key>kTagHTMLRange2_1</key>
+		<string>&lt;SCRIPT&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://kr.dictionary.search.yahoo.com/search/dictionaryp?subtype=eng&amp;prop=&amp;p=%@</string>
+	</dict>
+	<key>WordReference</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&apos;Otbl&apos;&gt;</string>
+		<key>kTagHTMLRange1_1</key>
+		<string>&lt;span id=&apos;strAnchors&apos;&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;b title=&apos;Forum discussions with the word(s)</string>
+		<key>kTagHTMLRange2_1</key>
+		<string>Forum discussions with the word(s)</string>
+		<key>kTagHTMLRange2_2</key>
+		<string>&lt;tr dir=&quot;ltr&quot;&gt;</string>
+		<key>kTagHTMLRange2_3</key>
+		<string>&lt;div id=&quot;postArticle&quot;&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://www.wordreference.com/definition/%@</string>
+		<key>kLinkWebENKO</key>
+		<string>http://www.wordreference.com/enko/%@</string>
+		<key>kLinkWebENRU</key>
+		<string>http://www.wordreference.com/enru/%@</string>
+	</dict>
+	<key>Kamus_Indo</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&quot;leftbox_results&quot;</string>
+		<key>kTagHTMLRange1_1</key>
+		<string>&lt;script type=&quot;text/javascript&quot;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;/script&gt;</string>
+		<key>kLinkWebENID</key>
+		<string>http://www.kamus.net/result.php?w=en-usa&amp;q=%@&amp;submit=Search&amp;e=0</string>
+		<key>kLinkWebIDEN</key>
+		<string>http://www.kamus.net/result.php?w=id-indonesia&amp;q=%@&amp;submit=Search&amp;e=0</string>
+	</dict>
+	<key>ChineseOnline</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;body onLoad=sf()&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;table width=&quot;479&quot; border=&quot;0&quot;&gt;</string>
+		<key>kTagHTMLRange3</key>
+		<string>&lt;font color=gray&gt;&lt;!--em--&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://dict.cn/en/search/</string>
+	</dict>
+	<key>LingVo_Russian</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div class=&quot;b-translation__article</string>
+		<key>kLinkWeb</key>
+		<string>http://lingvo.yandex.ru/en?text=%@&amp;st_translate=on</string>
+	</dict>
+	<key>Reverso_Russian</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&quot;TableHTMLResult&quot;&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;a name=&quot;cd1&quot;&gt;</string>
+		<key>kLinkWeb</key>
+		<string>http://dictionary.reverso.net/english-definition/%@</string>
+	</dict>
+	<key>BaamBooENVI</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;head&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;div id=&quot;content&quot;&gt;</string>
+		<key>kLinkWebENVI</key>
+		<string>http://m.tratu.vn/?title=%@&amp;dict=en_vn&amp;submit=Tra+t%%E1%%BB%%AB</string>
+		<key>kLinkWebENEN</key>
+		<string>http://m.tratu.vn/?title=%@&amp;dict=en_en&amp;submit=Tra+t%%E1%%BB%%AB</string>
+		<key>kLinkWebVIEN</key>
+		<string>http://m.tratu.vn/?title=%@&amp;dict=vn_en&amp;submit=Tra+t%%E1%%BB%%AB</string>
+	</dict>
+	<key>GoogleTranslate</key>
+	<dict>
+		<key>kTagLink</key>
+		<string>https://www.google.com/translate_a/t?client=webapp&amp;sl=%@&amp;tl=%@&amp;hl=%@&amp;q=%@&amp;sc=1</string>
+		<key>kTagHTML</key>
+		<string>&quot;trans&quot;</string>
+	</dict>
+	<key>VOA</key>
+	<dict>
+		<key>kTagTitleRSS</key>
+		<string>title</string>
+		<key>kTagDescriptionRSS</key>
+		<string>description</string>
+		<key>kTagLinkLessonRSS</key>
+		<string>link</string>
+		<key>kTagContentRSS</key>
+		<string>content:encoded</string>
+		<key>kTagGUIDRSS</key>
+		<string>guid</string>
+		<key>kTagDateRSS</key>
+		<string>pubDate</string>
+		<key>kTagItemRSS</key>
+		<string>item</string>
+		<key>kTagHTMLContentRange1</key>
+		<string>&lt;div class=&quot;articleContent&quot;&gt;</string>
+		<key>kTagHTMLContentRange2</key>
+		<string>&lt;div class=&quot;footerlinks&quot;&gt;</string>
+		<key>kTagHTMLStateButtonNext</key>
+		<string>Next&lt;/a&gt;</string>
+		<key>kTagHTMLBeginDateLesson</key>
+		<string>&lt;p class=&quot;resultPubDate&quot;&gt;</string>
+		<key>kTagHTMLEndDateLesson</key>
+		<string>&lt;/p&gt;</string>
+		<key>kTagHTMLBeginLession</key>
+		<string>&lt;a class=&apos;linkmed&apos;</string>
+		<key>kTagHTMLEndLession</key>
+		<string>&lt;/a&gt;</string>
+		<key>kTagHTMLBeginLinkLession</key>
+		<string>href=</string>
+		<key>kTagHTMLEndLinkLession</key>
+		<string>&gt;</string>
+		<key>kLinkVOA</key>
+		<string>http://learningenglish.voanews.com</string>
+		<key>kTagHTMLBeginSound</key>
+		<string>/audio/Audio/</string>
+		<key>kTagHTMLEndSound</key>
+		<string>.html</string>
+		<key>kTagHTMLBeginSoundLession</key>
+		<string>downloadlinkstatic&quot;&gt;&lt;a href=&quot;</string>
+		<key>kTagHTMLEndSoundLession</key>
+		<string>&quot;</string>
+		<key>kTagHTMLItemLession</key>
+		<string>&lt;div class=&quot;searchResultItem&quot;&gt;</string>
+		<key>kTagHTMLItemLastLession</key>
+		<string>&lt;p class=&quot;resultText&quot;&gt;</string>
+		<key>kTagHTMLBeginResultSearch1</key>
+		<string>&quot;ctl00_ctl00_cpAB_cp1_rptSearchResults</string>
+		<key>kTagHTMLEndResultSearch1</key>
+		<string>&lt;/span&gt;  found</string>
+		<key>kTagHTMLEndResultSearch1_1</key>
+		<string>&lt;/span&gt; found</string>
+		<key>kTagHTMLEndResultSearch1_2</key>
+		<string>&lt;/span&gt;found</string>
+		<key>kTagHTMLBeginResultSearch2</key>
+		<string>&lt;/div&gt;</string>
+		<key>kTagHTMLEndResultSearch2</key>
+		<string>&lt;/span&gt;</string>
+		<key>kLinkRadioVOA</key>
+		<string>http://www.voanews.com/mp3/voa/english/spec/SPECIAL_ENGLISH_NEWS.mp3</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>level</key>
+	<array>
+		<string>START LEVEL</string>
+		<string>EASY LEVEL</string>
+		<string>MEDIUM LEVEL</string>
+		<string>HARD LEVEL</string>
+		<string>HARDEST LEVEL</string>
+	</array>
+	<key>continent</key>
+	<array>
+		<string>EUROPE</string>
+		<string>ASIA</string>
+		<string>AFRICA</string>
+		<string>AMERICAS</string>
+		<string>OCEANS</string>
+		<string>WORLD</string>
+	</array>
+	<key>country</key>
+	<array>
+		<string>AFGHANISTAN</string>
+		<string>ALAND ISLANDS</string>
+		<string>ALBANIA</string>
+		<string>ALGERIA</string>
+		<string>AMERICAN SAMOA</string>
+		<string>ANDORRA</string>
+		<string>ANGOLA</string>
+		<string>ANGUILLA</string>
+		<string>ANTIGUA AND BARBUDA</string>
+		<string>ARGENTINA</string>
+		<string>ARMENIA</string>
+		<string>ARUBA</string>
+		<string>AUSTRALIA</string>
+		<string>AUSTRIA</string>
+		<string>AZERBAIJAN</string>
+		<string>BAHAMAS</string>
+		<string>BAHRAIN</string>
+		<string>BANGLADESH</string>
+		<string>BARBADOS</string>
+		<string>BELARUS</string>
+		<string>BELGIUM</string>
+		<string>BELIZE</string>
+		<string>BENIN</string>
+		<string>BERMUDA</string>
+		<string>BHUTAN</string>
+		<string>BOLIVIA</string>
+		<string>BOSNIA AND HERZEGOVINA</string>
+		<string>BOTSWANA</string>
+		<string>BRAZIL</string>
+		<string>BRITISH INDIAN OCEAN</string>
+		<string>BRITISH VIRGIN ISLANDS</string>
+		<string>BRUNEI</string>
+		<string>BULGARIA</string>
+		<string>BURKINA FASO</string>
+		<string>MYANMAR</string>
+		<string>BURUNDI</string>
+		<string>CAMBODIA</string>
+		<string>CAMEROON</string>
+		<string>CANADA</string>
+		<string>CAPE VERDE</string>
+		<string>CAYMAN ISLANDS</string>
+		<string>CENTRAL AFRICAN REPUBLIC</string>
+		<string>CHAD</string>
+		<string>CHILE</string>
+		<string>CHINA</string>
+		<string>CHRISTMAS ISLAND</string>
+		<string>COLOMBIA</string>
+		<string>COMOROS</string>
+		<string>COOK ISLANDS</string>
+		<string>COSTA RICA</string>
+		<string>CROATIA</string>
+		<string>CUBA</string>
+		<string>CURACAO</string>
+		<string>CYPRUS</string>
+		<string>CZECH REPUBLIC</string>
+		<string>CONGO</string>
+		<string>DENMARK</string>
+		<string>DJIBOUTI</string>
+		<string>DOMINICA</string>
+		<string>DOMINICAN REPUBLIC</string>
+		<string>ECUADOR</string>
+		<string>EGYPT</string>
+		<string>EL SALVADOR</string>
+		<string>EQUATORIAL GUINEA</string>
+		<string>ERITREA</string>
+		<string>ESTONIA</string>
+		<string>ETHIOPIA</string>
+		<string>FALKLAND ISLANDS</string>
+		<string>FAROE ISLANDS</string>
+		<string>FIJI</string>
+		<string>FINLAND</string>
+		<string>FRANCE</string>
+		<string>FRENCH POLYNESIA</string>
+		<string>GAMBIA</string>
+		<string>GABON</string>
+		<string>GEORGIA</string>
+		<string>GERMANY</string>
+		<string>GHANA</string>
+		<string>GIBRALTAR</string>
+		<string>GREECE</string>
+		<string>GREENLAND</string>
+		<string>GRENADA</string>
+		<string>GUAM</string>
+		<string>GUATEMALA</string>
+		<string>GUERNSEY</string>
+		<string>GUINEA</string>
+		<string>GUINEA BISSAU</string>
+		<string>GUYANA</string>
+		<string>HAITI</string>
+		<string>HONDURAS</string>
+		<string>HONG KONG</string>
+		<string>HUNGARY</string>
+		<string>ICELAND</string>
+		<string>INDIA</string>
+		<string>INDONESIA</string>
+		<string>IRAN</string>
+		<string>IRAQ</string>
+		<string>IRELAND</string>
+		<string>ISLAND OF MAN</string>
+		<string>ISRAEL</string>
+		<string>ITALY</string>
+		<string>IVORY COAST</string>
+		<string>JAMAICA</string>
+		<string>JAPAN</string>
+		<string>JERSEY</string>
+		<string>JORDAN</string>
+		<string>KAZAKHSTAN</string>
+		<string>KENYA</string>
+		<string>KIRIBATI</string>
+		<string>KOSOVO</string>
+		<string>KUWAIT</string>
+		<string>KYRGYZSTAN</string>
+		<string>LAOS</string>
+		<string>LATVIA</string>
+		<string>LEBANON</string>
+		<string>LESOTHO</string>
+		<string>LIBERIA</string>
+		<string>LIBYA</string>
+		<string>LIECHTENSTEIN</string>
+		<string>LITHUANIA</string>
+		<string>LUXEMBOURG</string>
+		<string>MACAU</string>
+		<string>MACEDONIA</string>
+		<string>MADAGASCAR</string>
+		<string>MALAWI</string>
+		<string>MALAYSIA</string>
+		<string>MALDIVES</string>
+		<string>MALI</string>
+		<string>MALTA</string>
+		<string>MARSHALL ISLANDS</string>
+		<string>MARTINIQUE</string>
+		<string>MAURITANIA</string>
+		<string>MAURITIUS</string>
+		<string>MEXICO</string>
+		<string>MICRONESIA</string>
+		<string>MOLDOVA</string>
+		<string>MONACO</string>
+		<string>MONGOLIA</string>
+		<string>MONTENEGRO</string>
+		<string>MONTSERRAT</string>
+		<string>MOROCCO</string>
+		<string>MOZAMBIQUE</string>
+		<string>NAMIBIA</string>
+		<string>NAURU</string>
+		<string>NEPAL</string>
+		<string>NETHERLANDS</string>
+		<string>NETHERLANDS ANTILLES</string>
+		<string>NEW CALEDONIA</string>
+		<string>NEW ZEALAND</string>
+		<string>NICARAGUA</string>
+		<string>NIGER</string>
+		<string>NIGERIA</string>
+		<string>NIUE</string>
+		<string>NORFOLK ISLAND</string>
+		<string>NORTH KOREA</string>
+		<string>NORTHERN MARIANA ISLANDS</string>
+		<string>NORWAY</string>
+		<string>OMAN</string>
+		<string>PAKISTAN</string>
+		<string>PALAU</string>
+		<string>PALESTINIAN TERRITORY</string>
+		<string>PANAMA</string>
+		<string>PAPUA NEW GUINEA</string>
+		<string>PARAGUAY</string>
+		<string>PERU</string>
+		<string>PHILIPPINES</string>
+		<string>PITCAIRN ISLANDS</string>
+		<string>POLAND</string>
+		<string>PORTUGAL</string>
+		<string>PUERTO RICO</string>
+		<string>QATAR</string>
+		<string>DR CONGO</string>
+		<string>ROMANIA</string>
+		<string>RUSSIA</string>
+		<string>RWANDA</string>
+		<string>SAINT BARTHELEMY</string>
+		<string>SAINT HELENA</string>
+		<string>SAINT KITTS AND NEVIS</string>
+		<string>SAINT LUCIA</string>
+		<string>SAINT MARTIN</string>
+		<string>SAINT PIERRE AND MIQUELON</string>
+		<string>SAINT VINCENT-GRENADINES</string>
+		<string>SAMOA</string>
+		<string>SAN MARINO</string>
+		<string>SAO TOME AND PRINCIPE</string>
+		<string>SAUDI ARABIA</string>
+		<string>SENEGAL</string>
+		<string>SERBIA</string>
+		<string>SEYCHELLES</string>
+		<string>SIERRA LEONE</string>
+		<string>SINGAPORE</string>
+		<string>SAINT MAARTEN</string>
+		<string>SLOVAKIA</string>
+		<string>SLOVENIA</string>
+		<string>SOLOMON ISLANDS</string>
+		<string>SOMALIA</string>
+		<string>SOUTH AFRICA</string>
+		<string>SOUTH GEORGIA</string>
+		<string>SOUTH KOREA</string>
+		<string>SOUTH SUDAN</string>
+		<string>SPAIN</string>
+		<string>SRI LANKA</string>
+		<string>SUDAN</string>
+		<string>SURINAME</string>
+		<string>SVALBARD</string>
+		<string>SWAZILAND</string>
+		<string>SWEDEN</string>
+		<string>SWITZERLAND</string>
+		<string>SYRIA</string>
+		<string>TAIWAN</string>
+		<string>TAJIKISTAN</string>
+		<string>TANZANIA</string>
+		<string>THAILAND</string>
+		<string>TIBET</string>
+		<string>TIMOR LESTE</string>
+		<string>TOGO</string>
+		<string>TOKELAU</string>
+		<string>TONGA</string>
+		<string>TRINIDAD AND TOBAGO</string>
+		<string>TUNISIA</string>
+		<string>TURKEY</string>
+		<string>TURKMENISTAN</string>
+		<string>TURKS AND CAICOS</string>
+		<string>TUVALU</string>
+		<string>UGANDA</string>
+		<string>UKRAINE</string>
+		<string>UNITED ARAB EMIRATES</string>
+		<string>UNITED KINGDOM</string>
+		<string>UNITED STATES</string>
+		<string>URUGUAY</string>
+		<string>UZBEKISTAN</string>
+		<string>VANUATU</string>
+		<string>VATICAN CITY</string>
+		<string>VENEZUELA</string>
+		<string>VIETNAM</string>
+		<string>VIRGIN ISLANDS</string>
+		<string>WALLIS AND FUTUNA</string>
+		<string>WESTERN SAHARA</string>
+		<string>YEMEN</string>
+		<string>ZAMBIA</string>
+		<string>ZIMBABWE</string>
+	</array>
+</dict>
+</plist>

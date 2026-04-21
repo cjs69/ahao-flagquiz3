@@ -1,0 +1,69 @@
+
+/* Class = "IBUIButton"; normalTitle = "Học"; ObjectID = "5g4-Yh-gXL"; */
+"5g4-Yh-gXL.normalTitle" = "Học";
+
+/* Class = "IBUIButton"; normalTitle = "Button3"; ObjectID = "6z0-Zg-RY9"; */
+"6z0-Zg-RY9.normalTitle" = "Button3";
+
+/* Class = "IBUIButton"; normalTitle = "Button1"; ObjectID = "Aim-Ba-7UN"; */
+"Aim-Ba-7UN.normalTitle" = "Button1";
+
+/* Class = "IBUIButton"; normalTitle = "Xếp hạng ứng dụng"; ObjectID = "F5K-rv-SZZ"; */
+"F5K-rv-SZZ.normalTitle" = "Xếp hạng ứng dụng";
+
+/* Class = "IBUIButton"; normalTitle = "BẮT ĐẦU"; ObjectID = "GL9-TE-Fud"; */
+"GL9-TE-Fud.normalTitle" = "BẮT ĐẦU";
+
+/* Class = "IBUIButton"; normalTitle = "Button4"; ObjectID = "MtX-Rq-x8P"; */
+"MtX-Rq-x8P.normalTitle" = "Button4";
+
+/* Class = "IBUIButton"; normalTitle = "Button2"; ObjectID = "NcD-a1-vvH"; */
+"NcD-a1-vvH.normalTitle" = "Button2";
+
+/* Class = "IBUILabel"; text = "intro"; ObjectID = "Ni3-6I-niU"; */
+"Ni3-6I-niU.text" = "intro";
+
+/* Class = "IBUIButton"; normalTitle = "Chơi"; ObjectID = "PCM-c7-9x1"; */
+"PCM-c7-9x1.normalTitle" = "Chơi";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "R8r-AW-AJG"; */
+"R8r-AW-AJG.text" = "Label";
+
+/* Class = "IBUIButton"; normalTitle = "Button2"; ObjectID = "UJ1-cD-azP"; */
+"UJ1-cD-azP.normalTitle" = "Button2";
+
+/* Class = "IBUILabel"; text = "LEVEL"; ObjectID = "WZB-fh-XRv"; */
+"WZB-fh-XRv.text" = "LEVEL";
+
+/* Class = "IBUINavigationItem"; title = "CHỌN CẤP ĐỘ"; ObjectID = "aq6-fq-Sxb"; */
+"aq6-fq-Sxb.title" = "CHỌN CẤP ĐỘ";
+
+/* Class = "IBUIButton"; normalTitle = "TIẾP TỤC"; ObjectID = "biR-Tp-8YD"; */
+"biR-Tp-8YD.normalTitle" = "TIẾP TỤC";
+
+/* Class = "IBUIButton"; normalTitle = "Chia sẻ ứng dụng"; ObjectID = "dpB-pb-TEa"; */
+"dpB-pb-TEa.normalTitle" = "Chia sẻ ứng dụng";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "drA-ZW-mVj"; */
+"drA-ZW-mVj.text" = "0";
+
+/* Class = "IBUINavigationItem"; title = "CHỌN CHÂU LỤC"; ObjectID = "eIX-cj-H1m"; */
+"eIX-cj-H1m.title" = "CHỌN CHÂU LỤC";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "j0Q-fO-bLb"; */
+"j0Q-fO-bLb.text" = "0";
+
+/* Class = "IBUIButton"; normalTitle = "Button1"; ObjectID = "jz6-B7-omU"; */
+"jz6-B7-omU.normalTitle" = "Button1";
+
+/* Class = "IBUIButton"; normalTitle = "Button3"; ObjectID = "qeh-o7-phm"; */
+"qeh-o7-phm.normalTitle" = "Button3";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "ts7-2w-jmj"; */
+"ts7-2w-jmj.text" = "0";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "vNq-O7-o3r"; */
+"vNq-O7-o3r.text" = "0";
+
+/* Class = "IBUIButton"; normalTitle = "Button4"; ObjectID = "x2H-Gz-jJn"; */
+"x2H-Gz-jJn.normalTitle" = "Button4";

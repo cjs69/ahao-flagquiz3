@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appleId</key>
+	<string>HEAVENIPHONE.com</string>
+	<key>purchaseDate</key>
+	<date>2013-02-02T02:02:02Z</date>
+	<key>artistId</key>
+	<integer>315902610</integer>
+	<key>artistName</key>
+	<string>Clickgamer.com</string>
+	<key>bundleVersion</key>
+	<string>3.9</string>
+	<key>copyright</key>
+	<string>PPCLINK Mobile Software</string>
+	<key>drmVersionNumber</key>
+	<integer>0</integer>
+	<key>fileExtension</key>
+	<string>.app</string>
+	<key>genre</key>
+	<string>Reference</string>
+	<key>genreId</key>
+	<integer>6006</integer>
+	<key>itemId</key>
+	<integer>318906310</integer>
+	<key>itemName</key>
+	<string>English Vietnamese English Dictionary</string>
+	<key>kind</key>
+	<string>software</string>
+	<key>playlistArtistName</key>
+	<string>Clickgamer.com</string>
+	<key>playlistName</key>
+	<string>English Vietnamese English Dictionary</string>
+	<key>product-type</key>
+	<string>ios-app</string>
+	<key>rating</key>
+	<dict>
+		<key>content</key>
+		<string></string>
+		<key>label</key>
+		<string>4+</string>
+		<key>rank</key>
+		<integer>100</integer>
+		<key>system</key>
+		<string>itunes-games</string>
+	</dict>
+	<key>releaseDate</key>
+	<string>2009-06-08T21:30:33Z</string>
+	<key>s</key>
+	<integer>143441</integer>
+	<key>softwareIcon57x57URL</key>
+	<string>http://a459.phobos.apple.com/us/r1000/093/Purple/v4/e3/af/ec/e3afec8c-9313-ad53-b769-cb8fbc14be28/Icon.png</string>
+	<key>softwareIconNeedsShine</key>
+	<false/>
+	<key>softwareSupportedDeviceIds</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>softwareVersionBundleId</key>
+	<string>com.clickgamer.envndict</string>
+	<key>softwareVersionExternalIdentifier</key>
+	<integer>13635038</integer>
+	<key>softwareVersionExternalIdentifiers</key>
+	<array>
+		<integer>1748162</integer>
+		<integer>2170799</integer>
+		<integer>2923920</integer>
+		<integer>3221395</integer>
+		<integer>3759033</integer>
+		<integer>9622643</integer>
+		<integer>13635038</integer>
+	</array>
+	<key>vendorId</key>
+	<integer>256660</integer>
+	<key>versionRestrictions</key>
+	<integer>16843008</integer>
+</dict>
+</plist>
+

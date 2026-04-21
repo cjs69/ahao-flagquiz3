@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  iqforkids
+
+  Created by Xuan Hao on 3/17/15.
+  Copyright (c) 2015 VIETKIDGAME. All rights reserved.
+*/
+"T_COUNT" = "Time: %d(mins)";
+"Q_COUNT" = "Question: %d/30";
+"Share_app" = "Cant share app, please: \n 1. Install Facebook \n 2. Log in to facebook!";
+"TimeUp" = "Time over!";
+"OKZ" = "CLOSE";
+"infor" = "Alert!";
+"RESULT" = "\n YOUR IQ IS: %d \n %@ \n %@";
+"Mess" = "Please try app world flag quiz!";
+"Mess_time" = "Complete %@ questions in %@ seconds.";
+"Mess_lock" = "This level was locked. Please choose an unlocked level!";
+"Mess_Answer" = "THE ANSWER IS: %@";
+"Mess_Correct" = "Correct!";
+"Mess_InCorrect" = "Incorrect!";
+"OverWrong" = "Game over! Please try again";
+"Mess_Success" = "Excellent! You passed this level!";

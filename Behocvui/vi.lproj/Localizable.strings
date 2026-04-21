@@ -1,0 +1,22 @@
+/*
+ Localizable.strings
+ iqforkids
+ 
+ Created by Xuan Hao on 3/17/15.
+ Copyright (c) 2015 VIETKIDGAME. All rights reserved.
+ */
+"T_COUNT" = "Thời gian: %d(p)";
+"Q_COUNT" = "Câu hỏi: %d/30";
+"Share_app" = "Chưa chia sẻ được, hãy làm các bước: \n 1. Cài ứng dụng Facebook \n 2. Nhập tên và mật khẩu của Facebook trong phần Cài đặt của máy!";
+"TimeUp" = "Hết giờ";
+"OKZ" = "ĐÓNG";
+"infor" = "Thông báo!";
+"RESULT" = "\n CHỈ SỐ IQ CỦA BẠN LÀ: %d \n %@ \n %@";
+"Mess" = "Mời chơi ứng dụng quốc kỳ thế giới";
+"Mess_time" = "Hoàn thành %@ câu trong thời gian %@ giây.";
+"Mess_lock" = "Mức chơi hiện đang bị khoá. Bạn hãy chơi các mức không khoá!";
+"OverWrong" = "Sai quá nhiều! Bạn hãy chơi lại.";
+"Mess_Success" = "Chúc mừng! Bạn đã xuất sắc vượt qua mức chơi!";
+"Mess_Answer" = "ĐÁP ÁN LÀ: %@";
+"Mess_Correct" = "CHÍNH XÁC!";
+"Mess_InCorrect" = "KHÔNG ĐÚNG!";

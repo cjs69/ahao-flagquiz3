@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>level</key>
+	<array>
+		<string>MỨC BẮT ĐẦU</string>
+		<string>MỨC CHƠI DỄ</string>
+		<string>MỨC TRUNG BÌNH</string>
+		<string>MỨC KHÓ</string>
+		<string>MỨC KHÓ NHẤT</string>
+	</array>
+    <key>continent</key>
+    <array>
+    <string>CHÂU ÂU</string>
+    <string>CHÂU Á</string>
+    <string>CHÂU PHI</string>
+    <string>CHÂU MỸ</string>
+    <string>CHÂU ĐẠI DƯƠNG</string>
+    <string>CẢ THẾ GIỚI</string>
+    </array>
+	<key>country</key>
+	<array>
+		<string>AFGHANISTAN</string>
+		<string>QUẦN ĐẢO ALAND</string>
+		<string>ALBANIA</string>
+		<string>ALGERIA</string>
+		<string>AMERICAN SAMOA</string>
+		<string>ANDORRA</string>
+		<string>ANGOLA</string>
+		<string>ANGUILLA</string>
+		<string>ANTIGUA VÀ BARBUDA</string>
+		<string>ARGENTINA</string>
+		<string>ARMENIA</string>
+		<string>ARUBA</string>
+		<string>ÚC</string>
+		<string>ÁO</string>
+		<string>AZERBAIJAN</string>
+		<string>BAHAMAS</string>
+		<string>BAHRAIN</string>
+		<string>BANGLADESH</string>
+		<string>BARBADOS</string>
+		<string>BELARUS</string>
+		<string>BỈ</string>
+		<string>BELIZE</string>
+		<string>BENIN</string>
+		<string>BERMUDA</string>
+		<string>BUTAN</string>
+		<string>BOLIVIA</string>
+		<string>BOSNIA VÀ HERZEGOVINA</string>
+		<string>BOTSWANA</string>
+		<string>BRASIL</string>
+		<string>LĂNH THỔ ẤN ĐỘ DƯƠNG</string>
+		<string>QUẦN ĐẢO BRITISH VIRGIN</string>
+		<string>BRUNEI</string>
+		<string>BULGARIA</string>
+		<string>BURKINA FASO</string>
+		<string>MYANMAR</string>
+		<string>BURUNDI</string>
+		<string>CAMPUCHIA</string>
+		<string>CAMEROON</string>
+		<string>CANADA</string>
+		<string>CAPE VERDE</string>
+		<string>QUẦN ĐẢO CAYMAN</string>
+		<string>CH TRUNG PHI</string>
+		<string>CHAD</string>
+		<string>CHILE</string>
+		<string>TRUNG QUỐC</string>
+		<string>QUẦN ĐẢO GIÁNG SINH</string>
+		<string>COLOMBIA</string>
+		<string>COMOROS</string>
+		<string>QUẦN ĐẢO COOK</string>
+		<string>COSTA RICA</string>
+		<string>CROATIA</string>
+		<string>CUBA</string>
+		<string>CURACAO</string>
+		<string>SÍP</string>
+		<string>SÉC</string>
+		<string>CONGO</string>
+		<string>ĐAN MẠCH</string>
+		<string>DJIBOUTI</string>
+		<string>DOMINICA</string>
+		<string>CH DOMINICAN</string>
+		<string>ECUADOR</string>
+		<string>AI CẬP</string>
+		<string>EL SALVADOR</string>
+		<string>GUINEA XÍCH ĐẠO</string>
+		<string>ERITREA</string>
+		<string>ESTONIA</string>
+		<string>ETHIOPIA</string>
+		<string>QUẦN ĐẢO FALKLAND</string>
+		<string>QUẦN ĐẢO FAROE</string>
+		<string>FIJI</string>
+		<string>PHẦN LAN</string>
+		<string>PHÁP</string>
+		<string>POLYNESIA</string>
+		<string>GAMBIA</string>
+		<string>GABON</string>
+		<string>GRUZIA</string>
+		<string>ĐỨC</string>
+		<string>GHANA</string>
+		<string>GIBRALTAR</string>
+		<string>HY LẠP</string>
+		<string>GREENLAND</string>
+		<string>GRENADA</string>
+		<string>GUAM</string>
+		<string>GUATEMALA</string>
+		<string>GUERNSEY</string>
+		<string>GUINEA</string>
+		<string>GUINEA BISSAU</string>
+		<string>GUYANA</string>
+		<string>HAITI</string>
+		<string>HONDURAS</string>
+		<string>HONGKONG</string>
+		<string>HUNGRAGY</string>
+		<string>ICELAND</string>
+		<string>ẤN ĐỘ</string>
+		<string>INDONESIA</string>
+		<string>IRAN</string>
+		<string>IRAQ</string>
+		<string>IRELAND</string>
+		<string>QUẦN ĐẢO  MAN</string>
+		<string>ISRAEL</string>
+		<string>Ý</string>
+		<string>BỜ BIỂN NGÀ</string>
+		<string>JAMAICA</string>
+		<string>NHẬT BẢN</string>
+		<string>JERSEY</string>
+		<string>JORDAN</string>
+		<string>KAZAKHSTAN</string>
+		<string>KENYA</string>
+		<string>KIRIBATI</string>
+		<string>KOSOVO</string>
+		<string>KUWAIT</string>
+		<string>KYRGYZSTAN</string>
+		<string>LÀO</string>
+		<string>LATVIA</string>
+		<string>LIBAN</string>
+		<string>LESOTHO</string>
+		<string>LIBERIA</string>
+		<string>LIBYA</string>
+		<string>LIECHTENSTEIN</string>
+		<string>LITHUANIA</string>
+		<string>LUXEMBOURG</string>
+		<string>MACAO</string>
+		<string>MACEDONIA</string>
+		<string>MADAGASCAR</string>
+		<string>MALAWI</string>
+		<string>MALAYSIA</string>
+		<string>MALDIVES</string>
+		<string>MALI</string>
+		<string>MALTA</string>
+		<string>QUẦN ĐẢO MARSHALL</string>
+		<string>MARTINIQUE</string>
+		<string>MAURITANIA</string>
+		<string>MAURITIUS</string>
+		<string>MEXICO</string>
+		<string>MICRONESIA</string>
+		<string>MOLDOVA</string>
+		<string>MONACO</string>
+		<string>MÔNG CỔ</string>
+		<string>MONTENEGRO</string>
+		<string>MONTSERRAT</string>
+		<string>MAROC</string>
+		<string>MOZAMBIQUE</string>
+		<string>NAMIBIA</string>
+		<string>NAURU</string>
+		<string>NEPAL</string>
+		<string>HÀ LAN</string>
+		<string>ANTILLES HÀ LAN</string>
+		<string>NEW CALEDONIA</string>
+		<string>NEW ZEALAND</string>
+		<string>NICARAGUA</string>
+		<string>NIGER</string>
+		<string>NIGERIA</string>
+		<string>NIUE</string>
+		<string>QUẦN ĐẢO NORFOLK</string>
+		<string>BĂC TRIỀU TIÊN</string>
+		<string>QUẦN ĐẢO BẮC MARIANA</string>
+		<string>NA UY</string>
+		<string>OMAN</string>
+		<string>PAKISTAN</string>
+		<string>PALAU</string>
+		<string>PALESTIN</string>
+		<string>PANAMA</string>
+		<string>PAPUA NEW GUINEA</string>
+		<string>PARAGUAY</string>
+		<string>PERU</string>
+		<string>PHILIPPINES</string>
+		<string>QUẦN ĐẢO PITCAIRN</string>
+		<string>BA LAN</string>
+		<string>BỒ ĐÀO NHA</string>
+		<string>PUERTO RICO</string>
+		<string>QATAR</string>
+		<string>CH DÂN CHỦ CONGO</string>
+		<string>RUMANI</string>
+		<string>NGA</string>
+		<string>RWANDA</string>
+		<string>SAINT BARTHELEMY</string>
+		<string>SAINT HELENA</string>
+		<string>SAINT KITTS VÀ NEVIS</string>
+		<string>SAINT LUCIA</string>
+		<string>SAINT MARTIN</string>
+		<string>SAINT PIERRE VÀ MIQUELON</string>
+		<string>SAINT VINCENT VÀ GRENADINES</string>
+		<string>SAMOA</string>
+		<string>SAN MARINO</string>
+		<string>SAO TOME VÀ PRINCIPE</string>
+		<string>Ả RẬP SAUDI</string>
+		<string>SENEGAL</string>
+		<string>SERBIA</string>
+		<string>SEYCHELLES</string>
+		<string>SIERRA LEONE</string>
+		<string>SINGAPORE</string>
+		<string>SAINT MAARTEN</string>
+		<string>SLOVAKIA</string>
+		<string>SLOVENIA</string>
+		<string>QUẦN ĐẢO SOLOMON</string>
+		<string>SOMALIA</string>
+		<string>NAM PHI</string>
+		<string>NAM GEORGIA</string>
+		<string>HÀN QUỐC</string>
+		<string>NAM SUDAN</string>
+		<string>TÂY BAN NHA</string>
+		<string>SRI LANKA</string>
+		<string>SUDAN</string>
+		<string>SURINAME</string>
+		<string>SVALBARD</string>
+		<string>SWAZILAND</string>
+		<string>THỤY ĐIỂN</string>
+		<string>THỤY SỸ</string>
+		<string>SYRIA</string>
+		<string>ĐÀI LOAN</string>
+		<string>TAJIKISTAN</string>
+		<string>TANZANIA</string>
+		<string>THÁI LAN</string>
+		<string>TÂY TẠNG</string>
+		<string>ĐÔNG TIMO</string>
+		<string>TOGO</string>
+		<string>TOKELAU</string>
+		<string>TONGA</string>
+		<string>TRINIDAD VÀ TOBAGO</string>
+		<string>TUNISIA</string>
+		<string>THỔ NHĨ KỲ</string>
+		<string>TURKMENISTAN</string>
+		<string>QUẦN ĐẢO TURKS VÀ CAICOS</string>
+		<string>TUVALU</string>
+		<string>UGANDA</string>
+		<string>UCRAINA</string>
+		<string>UAE</string>
+		<string>VƯƠNG QUỐC ANH</string>
+		<string>HOA KỲ</string>
+		<string>URUGUAY</string>
+		<string>UZBEKISTAN</string>
+		<string>VANUATU</string>
+		<string>VATICAN</string>
+		<string>VENEZUELA</string>
+		<string>VIỆT NAM</string>
+		<string>QUẦN ĐẢO VIRGIN</string>
+		<string>WALLIS VÀ FUTUNA</string>
+		<string>WESTERN SAHARA</string>
+		<string>YEMEN</string>
+		<string>ZAMBIA</string>
+		<string>ZIMBABWE</string>
+	</array>
+</dict>
+</plist>

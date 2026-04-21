@@ -1,0 +1,355 @@
+//utf-8;13421798484troller.m
+//  Behocvui
+//
+//  Created by XuanHao on 6/16/14.
+//  Copyright (c) 2014 VIETKIDGAME. All rights reserved.
+//
+
+#import "VKGPlay.h"
+
+@interface VKGPlay ()
+
+// This object that will be used to count the 60 seconds of each level.
+@property (nonatomic, strong) NSTimer *gameTimer;
+
+// These two member variables that will store the operand values of the addition.
+@property (nonatomic) int operand1;
+@property (nonatomic) int operand2;
+
+// The timer value.
+@property (nonatomic) int timerValue;
+
+// The current level.
+@property (nonatomic) int level;
+
+// The current round of a level.
+@property (nonatomic) int currentAdditionCounter;
+
+// The player's score. Its type is int64_t so as to match the expected type by the respective method of GameKit.
+@property (nonatomic) int64_t score;
+
+// The number of remaining "lives" in the game.
+@property (nonatomic) int lives;
+
+// A flag indicating whether the Game Center features can be used after a user has been authenticated.
+@property (nonatomic) BOOL gameCenterEnabled;
+
+// This property stores the default leaderboard's identifier.
+@property (nonatomic, strong) NSString *leaderboardIdentifier;
+
+//Array store country name
+@property (nonatomic, strong) NSArray *pageNames;
+@property (nonatomic, strong) NSArray *pageImages;
+
+@property (nonatomic, strong) NSArray *arr_asks;
+@property (nonatomic, strong) NSArray *arr_times;
+@property (nonatomic, strong) NSArray *arr_lives;
+@property (nonatomic, strong) NSArray *arr_imglevels;
+// This method is used to set the initial values to all member variables.
+-(void)initValues;
+
+
+// When it's called, the timerValue member variable gets its initial value, which is 0, and the timer
+// is re-scheduled in order to start counting the time for a new level.
+-(void)startTimer;
+
+
+// It updates the time label on the view with the current timer value.
+-(void)updateTimerLabel:(NSTimer *)timer;
+
+
+// It creates a new ramdom addition operation and shows is to the lblAddition label, as well as all the three
+// possible answers.
+-(void)createAddition;
+
+
+// It updates the level, both internally and visually.
+-(void)updateLevelLabel;
+
+
+// It sets the initial value to the lives member variable and makes visible all "life" images.
+-(void)initLives;
+
+@property (nonatomic) int additionsPerLevel;
+@property (nonatomic) int maxItemCount;
+@property (nonatomic) int currentLevel;
+@property (nonatomic) int timeLevel;
+@property (nonatomic) int ilang;
+
+@end
+
+@implementation VKGPlay
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self initValues];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)bt1click:(id)sender {
+}
+
+- (IBAction)bt2click:(id)sender {
+}
+- (IBAction)bt3click:(id)sender {
+}
+- (IBAction)bt4click:(id)sender {
+}
+
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+- (void)resetGame {
+        // Set the initial value to all properties.
+        [self initValues];
+        
+        // Start the timer.
+        if (_gameTimer != nil) {
+            _gameTimer = nil;
+        }
+        [self startTimer];
+        
+        // Create a random addition.
+        [self createAddition];
+        
+        // Make all lives available to the player.
+        [self initLives];
+        
+        // Update the level label and the level counter.
+        [self updateLevelLabel];
+        
+        // Set the initial score value to the respective label.
+        [_lblscore setText:@"0"];
+    
+   }
+
+
+- (IBAction)handleAnswer:(id)sender {
+    // Get the sender's title and check if it matches to the correct result.
+    int answer = [[(UIButton *)sender titleForState:UIControlStateNormal] intValue];
+    
+    // Declare and init a flag that will indicate whether the game should continue after a
+    // player selects wrong answer.
+    BOOL shouldContinue = YES;
+    
+    if (answer == _operand1 + _operand2) {
+        // In case of a correct answer, then add 10 more points to the score and update
+        // the lblScore label.
+        _score += 10;
+        [_lblscore setText:[NSString stringWithFormat:@"%lld", _score]];
+    }
+    else{
+        // If the player select a wrong answer, then decrease the available amount of lives by one.
+        _lives--;
+        
+        // Next, depending on the number of the remaining lives hide any unnecessary icons to reflect
+        // the remaining lives to the player.
+        switch (_lives) {
+            case 2:
+                _imglive3.hidden = YES;
+                break;
+            case 1:
+                _imglive2.hidden = YES;
+                break;
+            case 0:
+                _imglive1.hidden = YES;
+                break;
+                
+            default:
+                break;
+        }
+        
+        // If no more lives have been left, the game must stop.
+        if (_lives == 0) {
+            // Show a "Game Over" message.
+            UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@""
+                                                                    message:@"Game Over"
+                                                                   delegate:self
+                                                          cancelButtonTitle:nil
+                                                          otherButtonTitles:@"Okay", nil];
+            [gameOverAlert show];
+            
+            // Indicate that the game should not continue.
+            shouldContinue = NO;
+            
+            // Hide any unnecessary controls.
+            [self resetGame];
+        }
+        
+    }
+    
+    // The next part will be executed only if the game is still on.
+    if (shouldContinue) {
+        // Create a new random addition.
+        [self createAddition];
+        
+        // Increase the round counter value by one.
+        _currentAdditionCounter++;
+        
+        // If the counter becomes equal to the allowed additions per level, then set its initial value,
+        // update the level and restart the timer.
+        if (_currentAdditionCounter == additionsPerLevel) {
+            _currentAdditionCounter = 0;
+            [self updateLevelLabel];
+            
+            [_gameTimer invalidate];
+            _gameTimer = nil;
+            
+            [self startTimer];
+        }
+    }
+}
+
+-(void)initValues{
+    // Set the initial values to all member variables.
+   
+    _arr_asks = @[@10, @20, @30, @40, @50];       //So cau hoi tung muc
+    _arr_times = @[@50, @40, @30, @20, @10];      //thoi gian tra loi (giay)
+
+    _pageNames = @[
+      @[@"AFGHANISTAN",@"QUẦN ĐẢO ALAND",@"ALBANIA",@"ALGERIA",@"AMERICAN SAMOA",@"ANDORRA",@"ANGOLA",@"ANGUILLA",@"ANTIGUA VÀ BARBUDA",@"ARGENTINA",@"ARMENIA",@"ARUBA",@"ÚC",@"ÁO",@"AZERBAIJAN",@"BAHAMAS",@"BAHRAIN",@"BANGLADESH",@"BARBADOS",@"BELARUS",@"BỈ",@"BELIZE",@"BENIN",@"BERMUDA",@"BUTAN",@"BOLIVIA",@"BOSNIA VÀ HERZEGOVINA",@"BOTSWANA",@"BRASIL",@"LĂNH THỔ ẤN ĐỘ DƯƠNG",@"QUẦN ĐẢO BRITISH VIRGIN",@"BRUNEI",@"BULGARIA",@"BURKINA FASO",@"MYANMAR",@"BURUNDI",@"CAMPUCHIA",@"CAMEROON",@"CANADA",@"CAPE VERDE",@"QUẦN ĐẢO CAYMAN",@"CH TRUNG PHI",@"CHAD",@"CHILE",@"TRUNG QUỐC",@"QUẦN ĐẢO GIÁNG SINH",@"COLOMBIA",@"COMOROS",@"QUẦN ĐẢO COOK",@"COSTA RICA",@"CROATIA",@"CUBA",@"CURACAO",@"SÍP",@"SÉC",@"CONGO",@"ĐAN MẠCH",@"DJIBOUTI",@"DOMINICA",@"CH DOMINICAN",@"ECUADOR",@"AI CẬP",@"EL SALVADOR",@"GUINEA XÍCH ĐẠO",@"ERITREA",@"ESTONIA",@"ETHIOPIA",@"QUẦN ĐẢO FALKLAND",@"QUẦN ĐẢO FAROE",@"FIJI",@"PHẦN LAN",@"PHÁP",@"POLYNESIA",@"GAMBIA",@"GABON",@"GRUZIA",@"ĐỨC",@"GHANA",@"GIBRALTAR",@"HY LẠP",@"GREENLAND",@"GRENADA",@"GUAM",@"GUATEMALA",@"GUERNSEY",@"GUINEA",@"GUINEA BISSAU",@"GUYANA",@"HAITI",@"HONDURAS",@"HONGKONG",@"HUNGRAGY",@"ICELAND",@"ẤN ĐỘ",@"INDONESIA",@"IRAN",@"IRAQ",@"IRELAND",@"QUẦN ĐẢO  MAN",@"ISRAEL",@"Ý",@"BỜ BIỂN NGÀ",@"JAMAICA",@"NHẬT BẢN",@"JERSEY",@"JORDAN",@"KAZAKHSTAN",@"KENYA",@"KIRIBATI",@"KOSOVO",@"KUWAIT",@"KYRGYZSTAN",@"LÀO",@"LATVIA",@"LIBAN",@"LESOTHO",@"LIBERIA",@"LIBYA",@"LIECHTENSTEIN",@"LITHUANIA",@"LUXEMBOURG",@"MACAO",@"MACEDONIA",@"MADAGASCAR",@"MALAWI",@"MALAYSIA",@"MALDIVES",@"MALI",@"MALTA",@"QUẦN ĐẢO MARSHALL",@"MARTINIQUE",@"MAURITANIA",@"MAURITIUS",@"MEXICO",@"MICRONESIA",@"MOLDOVA",@"MONACO",@"MÔNG CỔ",@"MONTENEGRO",@"MONTSERRAT",@"MAROC",@"MOZAMBIQUE",@"NAMIBIA",@"NAURU",@"NEPAL",@"HÀ LAN",@"ANTILLES HÀ LAN",@"NEW CALEDONIA",@"NEW ZEALAND",@"NICARAGUA",@"NIGER",@"NIGERIA",@"NIUE",@"QUẦN ĐẢO NORFOLK",@"BĂC TRIỀU TIÊN",@"QUẦN ĐẢO BẮC MARIANA",@"NA UY",@"OMAN",@"PAKISTAN",@"PALAU",@"PALESTIN",@"PANAMA",@"PAPUA NEW GUINEA",@"PARAGUAY",@"PERU",@"PHILIPPINES",@"QUẦN ĐẢO PITCAIRN",@"BA LAN",@"BỒ ĐÀO NHA",@"PUERTO RICO",@"QATAR",@"CH DÂN CHỦ CONGO",@"RUMANI",@"NGA",@"RWANDA",@"SAINT BARTHELEMY",@"SAINT HELENA",@"SAINT KITTS VÀ NEVIS",@"SAINT LUCIA",@"SAINT MARTIN",@"SAINT PIERRE VÀ MIQUELON",@"SAINT VINCENT VÀ GRENADINES",@"SAMOA",@"SAN MARINO",@"SAO TOME VÀ PRINCIPE",@"Ả RẬP SAUDI",@"SENEGAL",@"SERBIA",@"SEYCHELLES",@"SIERRA LEONE",@"SINGAPORE",@"SAINT MAARTEN",@"SLOVAKIA",@"SLOVENIA",@"QUẦN ĐẢO SOLOMON",@"SOMALIA",@"NAM PHI",@"NAM GEORGIA",@"HÀN QUỐC",@"NAM SUDAN",@"TÂY BAN NHA",@"SRI LANKA",@"SUDAN",@"SURINAME",@"SVALBARD",@"SWAZILAND",@"THỤY ĐIỂN",@"THỤY SỸ",@"SYRIA",@"ĐÀI LOAN",@"TAJIKISTAN",@"TANZANIA",@"THÁI LAN",@"TÂY TẠNG",@"ĐÔNG TIMO",@"TOGO",@"TOKELAU",@"TONGA",@"TRINIDAD VÀ TOBAGO",@"TUNISIA",@"TURKEY",@"TURKMENISTAN",@"QUẦN ĐẢO TURKS VÀ CAICOS",@"TUVALU",@"UGANDA",@"UCRAINA",@"UAE",@"VƯƠNG QUỐC ANH",@"HOA KỲ",@"URUGUAY",@"UZBEKISTAN",@"VANUATU",@"VATICAN",@"VENEZUELA",@"VIỆT NAM",@"QUẦN ĐẢO VIRGIN",@"WALLIS VÀ FUTUNA",@"WESTERN SAHARA",@"YEMEN",@"ZAMBIA",@"ZIMBABWE"],
+      @[@"AFGHANISTAN",@"ALAND ISLANDS",@"ALBANIA",@"ALGERIA",@"AMERICAN SAMOA",@"ANDORRA",@"ANGOLA",@"ANGUILLA",@"ANTIGUA AND BARBUDA",@"ARGENTINA",@"ARMENIA",@"ARUBA",@"AUSTRALIA",@"AUSTRIA",@"AZERBAIJAN",@"BAHAMAS",@"BAHRAIN",@"BANGLADESH",@"BARBADOS",@"BELARUS",@"BELGIUM",@"BELIZE",@"BENIN",@"BERMUDA",@"BHUTAN",@"BOLIVIA",@"BOSNIA AND HERZEGOVINA",@"BOTSWANA",@"BRAZIL",@"BRITISH INDIAN OCEAN TERRITORY",@"BRITISH VIRGIN ISLANDS",@"BRUNEI",@"BULGARIA",@"BURKINA FASO",@"MYANMAR",@"BURUNDI",@"CAMBODIA",@"CAMEROON",@"CANADA",@"CAPE VERDE",@"CAYMAN ISLANDS",@"CENTRAL AFRICAN REPUBLIC",@"CHAD",@"CHILE",@"CHINA",@"CHRISTMAS ISLAND",@"COLOMBIA",@"COMOROS",@"COOK ISLANDS",@"COSTA RICA",@"CROATIA",@"CUBA",@"CURACAO",@"CYPRUS",@"CZECH REPUBLIC",@"CONGO",@"DENMARK",@"DJIBOUTI",@"DOMINICA",@"DOMINICAN REPUBLIC",@"ECUADOR",@"EGYPT",@"EL SALVADOR",@"EQUATORIAL GUINEA",@"ERITREA",@"ESTONIA",@"ETHIOPIA",@"FALKLAND ISLANDS",@"FAROE ISLANDS",@"FIJI",@"FINLAND",@"FRANCE",@"FRENCH POLYNESIA",@"GAMBIA",@"GABON",@"GEORGIA",@"GERMANY",@"GHANA",@"GIBRALTAR",@"GREECE",@"GREENLAND",@"GRENADA",@"GUAM",@"GUATEMALA",@"GUERNSEY",@"GUINEA",@"GUINEA BISSAU",@"GUYANA",@"HAITI",@"HONDURAS",@"HONG KONG",@"HUNGARY",@"ICELAND",@"INDIA",@"INDONESIA",@"IRAN",@"IRAQ",@"IRELAND",@"ISLAND OF MAN",@"ISRAEL",@"ITALY",@"IVORY COAST",@"JAMAICA",@"JAPAN",@"JERSEY",@"JORDAN",@"KAZAKHSTAN",@"KENYA",@"KIRIBATI",@"KOSOVO",@"KUWAIT",@"KYRGYZSTAN",@"LAOS",@"LATVIA",@"LEBANON",@"LESOTHO",@"LIBERIA",@"LIBYA",@"LIECHTENSTEIN",@"LITHUANIA",@"LUXEMBOURG",@"MACAU",@"MACEDONIA",@"MADAGASCAR",@"MALAWI",@"MALAYSIA",@"MALDIVES",@"MALI",@"MALTA",@"MARSHALL ISLANDS",@"MARTINIQUE",@"MAURITANIA",@"MAURITIUS",@"MEXICO",@"MICRONESIA",@"MOLDOVA",@"MONACO",@"MONGOLIA",@"MONTENEGRO",@"MONTSERRAT",@"MOROCCO",@"MOZAMBIQUE",@"NAMIBIA",@"NAURU",@"NEPAL",@"NETHERLANDS",@"NETHERLANDS ANTILLES",@"NEW CALEDONIA",@"NEW ZEALAND",@"NICARAGUA",@"NIGER",@"NIGERIA",@"NIUE",@"NORFOLK ISLAND",@"NORTH KOREA",@"NORTHERN MARIANA ISLANDS",@"NORWAY",@"OMAN",@"PAKISTAN",@"PALAU",@"PALESTINIAN TERRITORY",@"PANAMA",@"PAPUA NEW GUINEA",@"PARAGUAY",@"PERU",@"PHILIPPINES",@"PITCAIRN ISLANDS",@"POLAND",@"PORTUGAL",@"PUERTO RICO",@"QATAR",@"DEMOCRATIC REPUBLIC OF THE CONGO",@"ROMANIA",@"RUSSIA",@"RWANDA",@"SAINT BARTHELEMY",@"SAINT HELENA",@"SAINT KITTS AND NEVIS",@"SAINT LUCIA",@"SAINT MARTIN",@"SAINT PIERRE AND MIQUELON",@"SAINT VINCENT AND THE GRENADINES",@"SAMOA",@"SAN MARINO",@"SAO TOME AND PRINCIPE",@"SAUDI ARABIA",@"SENEGAL",@"SERBIA",@"SEYCHELLES",@"SIERRA LEONE",@"SINGAPORE",@"SAINT MAARTEN",@"SLOVAKIA",@"SLOVENIA",@"SOLOMON ISLANDS",@"SOMALIA",@"SOUTH AFRICA",@"SOUTH GEORGIA",@"SOUTH KOREA",@"SOUTH SUDAN",@"SPAIN",@"SRI LANKA",@"SUDAN",@"SURINAME",@"SVALBARD",@"SWAZILAND",@"SWEDEN",@"SWITZERLAND",@"SYRIA",@"TAIWAN",@"TAJIKISTAN",@"TANZANIA",@"THAILAND",@"TIBET",@"TIMOR LESTE",@"TOGO",@"TOKELAU",@"TONGA",@"TRINIDAD AND TOBAGO",@"TUNISIA",@"TURKEY",@"TURKMENISTAN",@"TURKS AND CAICOS ISLANDS",@"TUVALU",@"UGANDA",@"UKRAINE",@"UNITED ARAB EMIRATES",@"UNITED KINGDOM",@"UNITED STATES",@"URUGUAY",@"UZBEKISTAN",@"VANUATU",@"VATICAN CITY",@"VENEZUELA",@"VIETNAM",@"VIRGIN ISLANDS",@"WALLIS AND FUTUNA",@"WESTERN SAHARA",@"YEMEN",@"ZAMBIA",@"ZIMBABWE"]
+      ];
+    _pageImages = @[@"af.png",@"ala.png",@"al.png",@"dz.png",@"as.png",@"ad.png",@"ao.png",@"ai.png",@"ag.png",@"ar.png",@"am.png",@"aw.png",@"au.png",@"at.png",@"az.png",@"bs.png",@"bh.png",@"bd.png",@"bb.png",@"by.png",@"be.png",@"bz.png",@"bj.png",@"bm.png",@"bt.png",@"bo.png",@"ba.png",@"bw.png",@"br.png",@"bri.png",@"vg.png",@"bn.png",@"bg.png",@"bf.png",@"mm.png",@"bi.png",@"kh.png",@"cm.png",@"ca.png",@"cv.png",@"ky.png",@"cf.png",@"td.png",@"cl.png",@"cn.png",@"chr.png",@"co.png",@"km.png",@"coo.png",@"cr.png",@"hr.png",@"cu.png",@"crc.png",@"cy.png",@"cz.png",@"cg.png",@"dk.png",@"dj.png",@"dm.png",@"dom.png",@"ec.png",@"eg.png",@"sv.png",@"gq.png",@"er.png",@"ee.png",@"et.png",@"fk.png",@"fo.png",@"fj.png",@"fi.png",@"fr.png",@"pf.png",@"gm.png",@"ga.png",@"ge.png",@"de.png",@"gh.png",@"gi.png",@"gr.png",@"gl.png",@"gd.png",@"gu.png",@"gt.png",@"gue.png",@"gn.png",@"gw.png",@"gy.png",@"ht.png",@"hn.png",@"hk.png",@"hu.png",@"is.png",@"in.png",@"id.png",@"ir.png",@"iq.png",@"ie.png",@"im.png",@"il.png",@"it.png",@"ci.png",@"jm.png",@"jp.png",@"je.png",@"jo.png",@"kz.png",@"ke.png",@"ki.png",@"kv.png",@"kw.png",@"kg.png",@"la.png",@"lv.png",@"lb.png",@"ls.png",@"lr.png",@"ly.png",@"li.png",@"lt.png",@"lu.png",@"mo.png",@"mk.png",@"mg.png",@"mw.png",@"my.png",@"mv.png",@"ml.png",@"mt.png",@"mh.png",@"mar.png",@"mr.png",@"mu.png",@"mx.png",@"fm.png",@"md.png",@"mc.png",@"mn.png",@"me.png",@"ms.png",@"ma.png",@"mz.png",@"na.png",@"nr.png",@"np.png",@"nl.png",@"net.png",@"nc.png",@"nz.png",@"ni.png",@"ne.png",@"ng.png",@"niue.png",@"nor.png",@"kp.png",@"norm.png",@"no.png",@"om.png",@"pk.png",@"pw.png",@"pal.png",@"pa.png",@"pg.png",@"py.png",@"pe.png",@"ph.png",@"pit.png",@"pl.png",@"pt.png",@"pr.png",@"qa.png",@"cd.png",@"ro.png",@"ru.png",@"rw.png",@"bl.png",@"sh.png",@"kn.png",@"lc.png",@"mf.png",@"pm.png",@"vc.png",@"ws.png",@"sm.png",@"st.png",@"sa.png",@"sn.png",@"rs.png",@"sc.png",@"sl.png",@"sg.png",@"sai.png",@"sk.png",@"si.png",@"sb.png",@"so.png",@"za.png",@"sou.png",@"kr.png",@"sos.png",@"es.png",@"lk.png",@"sd.png",@"sr.png",@"sva.png",@"sz.png",@"se.png",@"ch.png",@"sy.png",@"tw.png",@"tj.png",@"tz.png",@"th.png",@"tibet.png",@"tl.png",@"tg.png",@"tok.png",@"to.png",@"tt.png",@"tn.png",@"tr.png",@"tm.png",@"tc.png",@"tv.png",@"ug.png",@"ua.png",@"ae.png",@"gb.png",@"us.png",@"uy.png",@"uz.png",@"vu.png",@"va.png",@"ve.png",@"vn.png",@"vi.png",@"wal.png",@"wet.png",@"ye.png",@"zm.png",@"zw.png"];
+    
+    _arr_imglevels = @[@"zlevel0.png",@"zlevel1.png",@"zlevel2.png",@"zlevel3.png",@"zlevel4.png"];
+    _ilang = 0;  //Vietnamese
+    _timerValue = 0;
+    _currentLevel = _levelID;
+    _currentAdditionCounter = 0;
+    _score = 0;
+    _lives = 3;
+    _timeLevel = [[_arr_times objectAtIndex:_currentLevel] intValue];
+    _maxItemCount = [_pageImages count];
+    
+}
+
+
+-(void)startTimer{
+    // Set the initial value to the timerValue property and start the timer.
+    if (_gameTimer == nil) {
+        _timerValue = 0;
+        
+        _gameTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                      target:self
+                                                    selector:@selector(updateTimerLabel:)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    }
+    
+}
+
+
+-(void)updateTimerLabel:(NSTimer *)timer{
+    // Increase the timer value and set it to the lblTime label.
+    _timerValue++;
+    
+    [_lbltime setText:[NSString stringWithFormat:@"%d", _timerValue]];
+    
+    // If the timerValue value becomes greater than 60 then end the game.
+    if (_timerValue > 60) {
+        // Show a "Time is Up" message.
+        UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@""
+                                                                message:@"Hết giờ!"
+                                                               delegate:self
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"OK", nil];
+        [gameOverAlert show];
+        
+        // Hide any unnecessary controls.
+        [self resetGame];
+    }
+}
+
+
+-(void)createAddition{
+    // Generate two random integer numbers.
+    _operand1 = arc4random() % _maxItemCount;
+    _operand2 = arc4random() % _maxItemCount;
+    
+    
+    // Create the addition string and set it to the lblAddition label.
+    [_lblAddition setText:[NSString stringWithFormat:@"%d + %d", _operand1, _operand2]];
+    
+    // Calculate the correct result.
+    int correctResult = _operand1 + _operand2;
+    
+    // Produce two more random results.
+    int randomResult1 = arc4random() % 121;
+    int randomResult2 = arc4random() % 121;
+    
+    // Pick randomly the button on which the correct answer will appear.
+    int randomButton = arc4random() % 3;
+    
+    switch (randomButton) {
+        case 0:
+            [_btnAnswer1 setTitle:[NSString stringWithFormat:@"%d", correctResult] forState:UIControlStateNormal];
+            [_btnAnswer2 setTitle:[NSString stringWithFormat:@"%d", randomResult1] forState:UIControlStateNormal];
+            [_btnAnswer3 setTitle:[NSString stringWithFormat:@"%d", randomResult2] forState:UIControlStateNormal];
+            break;
+        case 1:
+            [_btnAnswer1 setTitle:[NSString stringWithFormat:@"%d", randomResult1] forState:UIControlStateNormal];
+            [_btnAnswer2 setTitle:[NSString stringWithFormat:@"%d", correctResult] forState:UIControlStateNormal];
+            [_btnAnswer3 setTitle:[NSString stringWithFormat:@"%d", randomResult2] forState:UIControlStateNormal];
+            break;
+        case 2:
+            [_btnAnswer1 setTitle:[NSString stringWithFormat:@"%d", randomResult1] forState:UIControlStateNormal];
+            [_btnAnswer2 setTitle:[NSString stringWithFormat:@"%d", randomResult2] forState:UIControlStateNormal];
+            [_btnAnswer3 setTitle:[NSString stringWithFormat:@"%d", correctResult] forState:UIControlStateNormal];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+-(void)updateLevelLabel{
+    // Increase the level counter by 1 and show it to the level label.
+    _currentLevel++;
+    _imglevel.image = [UIImage imageNamed:[_arr_imglevels objectAtIndex:_currentLevel]];
+
+
+}
+
+
+-(void)initLives{
+    // Set the initial value to the lives property and make all images visible.
+    _lives = 3;
+    _imglive1.hidden = NO;
+    _imglive2.hidden = NO;
+    _imglive3.hidden = NO;
+
+}
+
+-(void)shuffleArray{
+    
+    NSUInteger count = pageNames.count;
+    for (NSUInteger i = 0; i < count; ++i) {
+        NSInteger remainingCount = count - i;
+        NSInteger exchangeIndex = i + arc4random_uniform(remainingCount);
+        [_pageNames exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+        
+    }
+    
+}
+
+@end

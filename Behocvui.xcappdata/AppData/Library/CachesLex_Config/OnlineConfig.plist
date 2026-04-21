@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MobileAnswer</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div class=&quot;content&quot;&gt;</string>
+	</dict>
+	<key>NateEnglishKorean</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&apos;container&apos;&gt;</string>
+	</dict>
+	<key>ThesaurusOnline</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div class=&quot;form-block&quot;&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>@&quot;&lt;div class=&quot;citation&quot;&gt;&quot;</string>
+	</dict>
+	<key>YahooEnglishKorea</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;font class=&apos;StyleDic_0&apos;&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;</string>
+		<key>kTagHTMLRange2_1</key>
+		<string>&lt;SCRIPT&gt;</string>
+	</dict>
+	<key>WordReference</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&apos;Otbl&apos;&gt;</string>
+		<key>kTagHTMLRange1_1</key>
+		<string>&lt;span id=&apos;strAnchors&apos;&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;b title=&apos;Forum discussions with the word(s)</string>
+		<key>kTagHTMLRange2_1</key>
+		<string>Forum discussions with the word(s)</string>
+		<key>kTagHTMLRange2_2</key>
+		<string>&lt;tr dir=&quot;ltr&quot;&gt;</string>
+		<key>kTagHTMLRange2_3</key>
+		<string>&lt;div id=&quot;postArticle&quot;&gt;</string>
+	</dict>
+	<key>Kamus_Indo</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div id=&quot;leftbox_results&quot;</string>
+		<key>kTagHTMLRange1_1</key>
+		<string>&lt;script type=&quot;text/javascript&quot;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;/script&gt;</string>
+	</dict>
+	<key>ChineseOnline</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;body onLoad=sf()&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;table width=&quot;479&quot; border=&quot;0&quot;&gt;</string>
+		<key>kTagHTMLRange3</key>
+		<string>&lt;font color=gray&gt;&lt;!--em--&gt;</string>
+	</dict>
+	<key>LingVo_Russian</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;div class=&quot;b-translation__article</string>
+	</dict>
+	<key>Reverso_Russian</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;body&gt;</string>
+	</dict>
+	<key>BaamBooENVI</key>
+	<dict>
+		<key>kTagHTMLRange1</key>
+		<string>&lt;head&gt;</string>
+		<key>kTagHTMLRange2</key>
+		<string>&lt;div id=&quot;content&quot;&gt;</string>
+	</dict>
+	<key>GoogleTranslate</key>
+	<dict>
+		<key>kTagLink</key>
+		<string>https://www.google.com/translate_a/t?client=webapp&amp;sl=%@&amp;tl=%@&amp;hl=%@&amp;q=%@&amp;sc=1</string>
+		<key>kTagHTML</key>
+		<string>&quot;trans&quot;</string>
+	</dict>
+	<key>VOA</key>
+	<dict>
+		<key>kTagTitleRSS</key>
+		<string>title</string>
+		<key>kTagDescriptionRSS</key>
+		<string>description</string>
+		<key>kTagLinkLessonRSS</key>
+		<string>link</string>
+		<key>kTagContentRSS</key>
+		<string>content:encoded</string>
+		<key>kTagGUIDRSS</key>
+		<string>guid</string>
+		<key>kTagDateRSS</key>
+		<string>pubDate</string>
+		<key>kTagItemRSS</key>
+		<string>item</string>
+		<key>kTagHTMLContentRange1</key>
+		<string>&lt;div class=&quot;articleContent&quot;&gt;</string>
+		<key>kTagHTMLContentRange2</key>
+		<string>&lt;div class=&quot;footerlinks&quot;&gt;</string>
+		<key>kTagHTMLStateButtonNext</key>
+		<string>Next&lt;/a&gt;</string>
+		<key>kTagHTMLBeginDateLesson</key>
+		<string>&lt;p class=&quot;resultPubDate&quot;&gt;</string>
+		<key>kTagHTMLEndDateLesson</key>
+		<string>&lt;/p&gt;</string>
+		<key>kTagHTMLBeginLession</key>
+		<string>&lt;a class=&apos;linkmed&apos;</string>
+		<key>kTagHTMLEndLession</key>
+		<string>&lt;/a&gt;</string>
+		<key>kTagHTMLBeginLinkLession</key>
+		<string>href=</string>
+		<key>kTagHTMLEndLinkLession</key>
+		<string>&gt;</string>
+		<key>kLinkVOA</key>
+		<string>http://learningenglish.voanews.com</string>
+		<key>kTagHTMLBeginSound</key>
+		<string>/audio/Audio/</string>
+		<key>kTagHTMLEndSound</key>
+		<string>.html</string>
+		<key>kTagHTMLBeginSoundLession</key>
+		<string>downloadlinkstatic&quot;&gt;&lt;a href=&quot;</string>
+		<key>kTagHTMLEndSoundLession</key>
+		<string>&quot;</string>
+		<key>kTagHTMLItemLession</key>
+		<string>&lt;div class=&quot;searchResultItem&quot;&gt;</string>
+		<key>kTagHTMLItemLastLession</key>
+		<string>&lt;p class=&quot;resultText&quot;&gt;</string>
+		<key>kTagHTMLBeginResultSearch1</key>
+		<string>&quot;ctl00_ctl00_cpAB_cp1_rptSearchResults</string>
+		<key>kTagHTMLEndResultSearch1</key>
+		<string>&lt;/span&gt;  found</string>
+		<key>kTagHTMLEndResultSearch1_1</key>
+		<string>&lt;/span&gt; found</string>
+		<key>kTagHTMLEndResultSearch1_2</key>
+		<string>&lt;/span&gt;found</string>
+		<key>kTagHTMLBeginResultSearch2</key>
+		<string>&lt;/div&gt;</string>
+		<key>kTagHTMLEndResultSearch2</key>
+		<string>&lt;/span&gt;</string>
+	</dict>
+</dict>
+</plist>
