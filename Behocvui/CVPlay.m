@@ -8,6 +8,8 @@
 
 #import "CVPlay.h"
 #import "VKGPlay.h"
+@import GoogleMobileAds;
+
 @interface CVPlay () {
     NSArray *levellist;
     NSArray *arr_ask;
@@ -16,6 +18,8 @@
     long indexpathrow;
     BOOL isnolocked;
 }
+
+@property (nonatomic, strong) GADBannerView *bannerView;
 
 @end
 
@@ -50,9 +54,59 @@
     arr_color= @[myColor1,myColor2,myColor3,myColor4,myColor5];
     
     self.collectionView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zbg.jpg"]];
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 66, 0);
+    self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
     
     //[self.view setNeedsDisplay];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setupBannerAds];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self layoutBannerAds];
+}
+
+- (void)setupBannerAds
+{
+    if (self.bannerView != nil) {
+        if (self.bannerView.superview == nil) {
+            [self.navigationController.view addSubview:self.bannerView];
+        }
+        [self layoutBannerAds];
+        return;
+    }
+    
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    self.bannerView.adUnitID = @"ca-app-pub-7823577003605319/6590867985";
+    self.bannerView.rootViewController = self;
+    self.bannerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    [self.navigationController.view addSubview:self.bannerView];
+    [self layoutBannerAds];
+    [self.bannerView loadRequest:[GADRequest request]];
+}
+
+- (void)layoutBannerAds
+{
+    UIView *containerView = self.navigationController.view;
+    if (containerView == nil || self.bannerView == nil) {
+        return;
+    }
+    
+    CGSize bannerSize = CGSizeFromGADAdSize(kGADAdSizeBanner);
+    CGFloat x = (CGRectGetWidth(containerView.bounds) - bannerSize.width) / 2.0;
+    CGFloat bottomInset = 8.0;
+    if (@available(iOS 11.0, *)) {
+        bottomInset += containerView.safeAreaInsets.bottom;
+    }
+    CGFloat y = CGRectGetHeight(containerView.bounds) - bannerSize.height - bottomInset;
+    self.bannerView.frame = CGRectMake(x, y, bannerSize.width, bannerSize.height);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -159,8 +213,10 @@
 
 -(void) viewWillDisappear:(BOOL)animated
 {
-    /*
     [super viewWillDisappear: animated];
+    [self.bannerView removeFromSuperview];
+    self.bannerView = nil;
+    /*
     UIImage * backButtonImage = [[UIImage imageNamed:@"zback.png"]
                                  resizableImageWithCapInsets:UIEdgeInsetsMake(6, 15, 6, 7)];
     

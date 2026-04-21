@@ -10,12 +10,14 @@
 #import "VKGCVController.h"
 #import <Social/Social.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+@import GoogleMobileAds;
 
 @interface VKGViewController () {
     SLComposeViewController *mySLComposerSheet;
     
     //NSArray *titlelist;
 }
+@property (nonatomic, strong) GADBannerView *bannerView;
 @end
 
 @implementation VKGViewController
@@ -31,7 +33,37 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
    
+    [self setupBannerAds];
 
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self layoutBannerAdsInView:self.view];
+}
+
+- (void)setupBannerAds
+{
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    self.bannerView.adUnitID = @"ca-app-pub-7823577003605319/6590867985";
+    self.bannerView.rootViewController = self;
+    self.bannerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    [self.view addSubview:self.bannerView];
+    [self layoutBannerAdsInView:self.view];
+    [self.bannerView loadRequest:[GADRequest request]];
+}
+
+- (void)layoutBannerAdsInView:(UIView *)containerView
+{
+    CGSize bannerSize = CGSizeFromGADAdSize(kGADAdSizeBanner);
+    CGFloat x = (CGRectGetWidth(containerView.bounds) - bannerSize.width) / 2.0;
+    CGFloat bottomInset = 8.0;
+    if (@available(iOS 11.0, *)) {
+        bottomInset += containerView.safeAreaInsets.bottom;
+    }
+    CGFloat y = CGRectGetHeight(containerView.bounds) - bannerSize.height - bottomInset;
+    self.bannerView.frame = CGRectMake(x, y, bannerSize.width, bannerSize.height);
 }
 
 - (void)didReceiveMemoryWarning
